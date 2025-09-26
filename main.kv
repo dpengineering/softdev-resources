@@ -1,0 +1,59 @@
+<MainScreen>:
+    #: import time __main__.time
+
+    name: 'main'
+
+  # Example of a basic DPEAButton
+  # See here for kivy documentation (https://kivy.org/doc/stable/)
+  # DPEAButton:
+  #     id: some_name_button (used to easily identify and change attributes of the button in the python script)
+  #     size: width_in_px, height_in_px (ex: root.btn_x, root.btn_y)
+  #     center_x: x_pos_of_center_of_button (can also use 'x' instead of center_x if you want to set the location by the bottom right corner)
+  #     center_y: y_pos_of_center_of_button (can also use 'y' instead of center_y if you want to set the location by the bottom right corner)
+  #     on_press: root.your_function_here() (add a callback function here)
+
+  # Example of a basic Label
+  # Label:
+  #     id: some_name_text
+  #     halign: 'desiredDirection' (Horizontally align the text ['left', 'right', or 'center']
+  #     font_size: ##
+  #     text: "Your desired text"
+  #     color: Red, Green, Blue, Alpha (Transparency) [Numbers range from 0 to 1, not 0 to 255]
+  #     pos_hint: {"x": (##), "y": (##)} (used to adjust the position of the label)
+  #     size_hint: (1, 0.2) [This will shrink area in which the slider can be adjusted to be more appropriate to the actual size of the slider]
+
+    Slider:
+        # Use the Kivy docs to create a slider with an id of 'position', min of -100, max of 100, step of 1, and set the position to the bottom center of the screen
+        size_hint: (1, 0.05)
+        pos_hint: {"y": 1/2}
+
+    DPEAButton:
+        # Add the id of 'slider_text'. This button is just used to make everything look uniform, there is no callback function
+        # For the text: horizontally align center. The given text will use the value of the slider to display the appropriate value that the the motor is turning at.
+        # text: (str(int(-position.value)) + "%\nCCW") if position.value < 0 else (str(int(position.value)) + "%\nCW") if position.value > 0 else (str(int(position.value)) + "%")
+
+    DPEAButton:
+        # Add the id of 'change_button' and a callback to switch_screen().
+        # For the text: horizontally align center, add the text of "Joystick Screen".
+
+    DPEAButton:
+        # Add the id of 'power_button', make the fill color red, and a callback to motor_pressed().
+        # For the text: horizontally align center, add the text of "Stepper Off".
+
+    DPEAButton:
+        # Add the id of 'counter_button' and a callback to counter_pressed().
+        # For the text: horizontally align center, add the text of "0".
+
+    DPEAButton:
+        # Add the id of 'motor_script_button' and a callback to motor_script().
+        # For the text: horizontally align center, add the text of "Stepper Script".
+
+    DPEAButton:
+        # Add the id of 'servo_motor_script_button' and a callback to schedule_servo_motor().
+        # For the text: horizontally align center, add the text of "Servo Motor".
+
+
+<Slider>:
+    # Helpful modifications to the base slider class
+    value_track: True
+    value_track_color: 0.5, 0.5, 0.5, 1
