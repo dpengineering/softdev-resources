@@ -12,7 +12,7 @@ from kivy.config import Config
 from pidev.MixPanel import MixPanel
 from pidev.kivy.PassCodeScreen import PassCodeScreen
 from pidev.kivy.PauseScreen import PauseScreen
-from pidev.kivy.AdminScreen import AdminScreen
+# from pidev.kivy.AdminScreen import AdminScreen
 from pidev.kivy.DPEAButton import DPEAButton
 from datetime import datetime
 # Todo: uncomment when working on joystick: from joystick import JoystickScreen
@@ -248,7 +248,7 @@ Builder.load_file('main.kv')
 SCREEN_MANAGER.add_widget(MainScreen(name=MAIN_SCREEN_NAME))
 # Todo: when working on joystick, make sure to add the widget of JoystickScreen with a name of JOYSTICK_SCREEN_NAME to the SCREEN_MANAGER
 SCREEN_MANAGER.add_widget(PassCodeScreen(name='passCode'))
-SCREEN_MANAGER.add_widget(AdminScreen(name='admin'))
+# SCREEN_MANAGER.add_widget(AdminScreen(name='admin'))
 SCREEN_MANAGER.add_widget(PauseScreen(name='pauseScene'))
 PassCodeScreen.set_admin_events_screen('admin')
 """
