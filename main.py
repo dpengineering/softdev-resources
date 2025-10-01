@@ -1,6 +1,6 @@
 import os
-
 os.environ['DISPLAY'] = ":0.0"
+
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.lang import Builder
@@ -11,10 +11,9 @@ from pidev.kivy.PassCodeScreen import PassCodeScreen
 from pidev.kivy.PauseScreen import PauseScreen
 from pidev.kivy.AdminScreen import AdminScreen
 from pidev.kivy.DPEAButton import DPEAButton
-
+from joystick_screen import JoystickScreen
 
 # TODO Lesson 5: Uncomment lines below
-# from joystick import JoystickScreen
 # from dpeaDPi.DPiComputer import DPiComputer
 # from dpeaDPi.DPiStepper import *
 
@@ -39,7 +38,18 @@ class MotorButtonsGUI(App):
         Build the application
         :return: Kivy Screen Manager instance
         """
-        return SCREEN_MANAGER
+        Builder.load_file('main.kv')
+        #TODO: Load the joystick_screen.kv file here when ready
+
+        sm = ScreenManager()
+        sm.add_widget(MainScreen(name='main'))
+        #TODO: add a JoystickScreen widget here
+        sm.add_widget(PassCodeScreen(name='passCode'))
+        sm.add_widget(AdminScreen(name='admin'))
+        sm.add_widget(PauseScreen(name='pauseScene'))
+        PassCodeScreen.set_admin_events_screen('admin')
+
+        return sm
 
 
 Window.clearcolor = (1, 1, 1, 1)  # White
@@ -145,6 +155,7 @@ class MainScreen(Screen):
         dpiStepper.setAccelerationInStepsPerSecondPerSecond(stepper_num, accel_steps_per_second_per_second)
 
     def switch_screen(self):
+        #TODO: set the screen manager's current screen to be the joystick screen
         print("Triggered switch to Joystick Screen")
 
     def admin_action(self):
@@ -153,29 +164,7 @@ class MainScreen(Screen):
         This method is called from pidev/kivy/PassCodeScreen.kv
         :return: None
         """
-        SCREEN_MANAGER.current = 'passCode'
-
-
-"""
-Widget additions
-"""
-
-# These statements are required when adding a new screen:
-# (at top of file) add a global variable for the new name of your screen: NEW_SCREEN_NAME = 'new'
-# Builder.load_file('new.kv')
-# SCREEN_MANAGER.add_widget(MainScreen(name=NEW_SCREEN_NAME))
-# The 'new' from 'new.kv' should match what is in NEW_SCREEN_NAME
-
-SCREEN_MANAGER = ScreenManager()
-MAIN_SCREEN_NAME = 'main'
-
-Builder.load_file('main.kv')
-SCREEN_MANAGER.add_widget(MainScreen(name=MAIN_SCREEN_NAME))
-# TODO Lesson 5: Add the widget of JoystickScreen with a name of JOYSTICK_SCREEN_NAME to the SCREEN_MANAGER
-SCREEN_MANAGER.add_widget(PassCodeScreen(name='passCode'))
-SCREEN_MANAGER.add_widget(AdminScreen(name='admin'))
-SCREEN_MANAGER.add_widget(PauseScreen(name='pauseScene'))
-PassCodeScreen.set_admin_events_screen('admin')
+        self.manager.current = 'passCode'
 
 if __name__ == "__main__":
     # Makes the window auto full screen
