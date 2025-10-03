@@ -1,0 +1,247 @@
+<ButtonExamplesScreen>:
+    FloatLayout:
+        size_hint: None, None
+
+    DPEAButton:
+        id: button_1
+        text: "button_1"
+        size: 150, 150
+        center_x: 100
+        center_y: root.height - 100
+        color: 1, 1, 1, 1
+        fill_color: 1, 0, 0, 1
+        font_size: 25
+        mouseover_color: True
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_2
+        text: "button_2"
+        size: 150, 150
+        center_x: 285
+        center_y: root.height - 100
+        color: 0, 0, 0, 1
+        fill_color: 1, 1, 0, 1
+        border_radius: root.height/2
+        fill_radius: root.height/2
+        font_size: 25
+        mouseover_color: True
+        hover_color: 1, 1, 1, 1
+        mouseover_multiply_colors: False
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_3
+        text: "button_3"
+        size: 300, 150
+        center_x: 550
+        center_y: root.height - 100
+        color: 0, 0, 0, 1
+        fill_color: 0, 1, 0, 1
+        border_radius: 3
+        border_thickness: 10
+        fill_radius: 10
+        font_size: 25
+        mouseover_color: True
+        hover_color: 0, 0, 0, 1
+        mouseover_multiply_colors: False
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_4
+        text: "button_4"
+        size: 300, 150
+        center_x: 900
+        center_y: root.height - 100
+        color: 0, 0, 0, 1
+        fill_color: 0, 1, 1, 1
+        border_color: 0, 0, 0, 0.25
+        border_radius: 150/2
+        border_thickness: 5
+        fill_radius: 150/2
+        font_size: 25
+        mouseover_color: True
+        hover_color: 0, 0, 0, 0.25
+        mouseover_multiply_colors: False
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_5
+        text: "button_5"
+        size: 260, 260+100
+        center_x: 1250
+        center_y: root.height - 225
+        color: 1, 1, 1, 1
+        fill_color: 0, 0, 1, 0.5
+        border_color: 0, 0, 1, 0.5
+        border_radius: -20
+        border_thickness: 20
+        fill_radius: 400/2
+        font_size: 25
+        mouseover_color: True
+        hover_color: 0, 0, 0, 0.25
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_6
+        text: "button_6"
+        size: 150, 150
+        center_x: 1525
+        center_y: root.height - 100
+        color: 1, 0, 1, 1
+        fill_color: 1, 0, 1, 1
+        border_color: 1, 0, 1, 1
+        border_radius: 3
+        border_thickness: 5
+        fill_radius: 150/2
+        font_size: 25
+        mouseover_color: True
+        hover_color: 1, 1, 1, 1
+        mouseover_multiply_colors: False
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_7
+        text: "button_7"
+        size: 150, 400
+        center_x: 1725
+        center_y: root.height - 225
+        color: 1, 1, 1, 1
+        fill_color: 1, 0.5, 0, 1
+        border_color: 0, 0, 1, 0.5
+        border_radius: 150/2
+        border_thickness: 7
+        fill_radius: 150/2
+        font_size: 25
+        mouseover_color: True
+        hover_color: 1, 1, 1, 1
+        mouseover_multiply_colors: False
+        on_press: root.button_10_action()
+
+    DPEAButton:
+        id: button_8
+        text: "button_8"
+        size: 1025, 150
+        x: 25
+        center_y: root.height - 350
+        fill_color: 0, 0, 0, 1
+        color: 1, 1, 1, 1
+        font_size: 25
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_9
+        text: "button_9"
+        size: 300, 150
+        x: 25
+        center_y: root.height - 350
+        color: 0, 0, 0, 1
+        fill_color: 1, 1, 1, 1
+        border_color: 0, 0, 0, 1
+        font_size: 25
+        mouseover_color: True
+        on_press: root.button_9_action()
+
+    DPEAButton:
+        id: button_10
+        text: "button_10"
+        size: 150, 150
+        center_x: 1525
+        center_y: root.height - 350
+        color: 0, 0, 0, 1
+        fill_color: 1, 0.5, 0.5, 1
+        border_color: 1, 0.5, 0.5, 1
+        border_radius: 150/2
+        border_thickness: 5
+        fill_radius: 150/2
+        font_size: 25
+        mouseover_color: True
+        hover_color: 1, 1, 1, 1
+        mouseover_multiply_colors: False
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_11
+        text: "button_11"
+        size: 600, 525
+        x: 25
+        center_y: root.height - 788
+        color: 1, 0, 0, 1
+        fill_color: 1, 1, 1, 1
+        border_color: 1, 0, 0, 1
+        border_radius: 3
+        font_size: 25
+
+    DPEAButton:
+        id: button_12
+        text: "button_12"
+        size: 550, 100
+        center_x: 325
+        center_y: root.height - 600
+        color: 1, 0, 0, 1
+        fill_color: 1, 1, 1, 1
+        border_color: 1, 0, 0, 1
+        border_radius: 3
+        font_size: 25
+        mouseover_color: True
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_13
+        text: "button_13"
+        size: 550, 100
+        center_x: 325
+        center_y: root.height - 725
+        color: 1, 0, 0, 1
+        fill_color: 1, 1, 1, 1
+        border_color: 1, 0, 0, 1
+        border_radius: 3
+        font_size: 25
+        mouseover_color: True
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_14
+        text: "button_14"
+        size: 550, 100
+        center_x: 325
+        center_y: root.height - 850
+        color: 1, 0, 0, 1
+        fill_color: 1, 1, 1, 1
+        border_color: 1, 0, 0, 1
+        border_radius: 3
+        font_size: 25
+        mouseover_color: True
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_15
+        text: "button_15"
+        size: 550, 100
+        center_x: 325
+        center_y: root.height - 975
+        color: 1, 0, 0, 1
+        fill_color: 1, 1, 1, 1
+        border_color: 1, 0, 0, 1
+        border_radius: 3
+        font_size: 25
+        mouseover_color: True
+        on_press: root.pressed()
+
+    DPEAButton:
+        id: button_10
+        text: "button_10"
+        size: 150, 150
+        center_x: 1525
+        center_y: root.height - 350
+        color: 0, 0, 0, 1
+        fill_color: 1, 0.5, 0.5, 1
+        border_color: 1, 0.5, 0.5, 1
+        border_radius: 150/2
+        border_thickness: 5
+        fill_radius: 150/2
+        font_size: 25
+        mouseover_color: True
+        hover_color: 1, 1, 1, 1
+        mouseover_multiply_colors: False
+        on_press: root.pressed()
