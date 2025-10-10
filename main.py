@@ -1,6 +1,8 @@
 import os
 
 os.environ['DISPLAY'] = ":0.0"
+import sys
+sys.path.insert(0, 'pidev')
 
 from kivy.app import App
 from kivy.core.window import Window
@@ -8,25 +10,25 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.clock import Clock
 from kivy.config import Config
-from pidev.kivy.PassCodeScreen import PassCodeScreen
-from pidev.kivy.PauseScreen import PauseScreen
-from pidev.kivy.AdminScreen import AdminScreen
-from pidev.kivy.DPEAButton import DPEAButton
+from pidev.pidev.kivy.PassCodeScreen import PassCodeScreen
+from pidev.pidev.kivy.PauseScreen import PauseScreen
+from pidev.pidev.kivy.AdminScreen import AdminScreen
+from pidev.pidev.kivy.DPEAButton import DPEAButton
 from joystick_screen import JoystickScreen
 
 
 # TODO Lesson 5: Uncomment lines below
-# from dpeaDPi.DPiComputer import DPiComputer
-# from dpeaDPi.DPiStepper import *
+from dpeaDPi.DPiComputer import DPiComputer
+from dpeaDPi.DPiStepper import *
 
-# dpiStepper = DPiStepper()
-# dpiStepper.setBoardNumber(0)
-# if not dpiStepper.initialize():
-# print("Communication with the DPiStepper board failed.")
+dpiStepper = DPiStepper()
+dpiStepper.setBoardNumber(0)
+if not dpiStepper.initialize():
+    print("Communication with the DPiStepper board failed.")
 
-# dpiComputer = DPiComputer()
-# if not dpiComputer.initialize():
-# print("Communication with the DPiComputer board failed.")
+dpiComputer = DPiComputer()
+if not dpiComputer.initialize():
+    print("Communication with the DPiComputer board failed.")
 # -------------------------------------------------------------
 
 
