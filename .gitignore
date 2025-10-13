@@ -1,8 +1,0 @@
-pyvenv.cfg
-__pycache__/
-.idea
-bin/
-include/
-src/
-lib/
-lib64
